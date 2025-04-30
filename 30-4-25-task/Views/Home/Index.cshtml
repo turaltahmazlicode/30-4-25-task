@@ -1,4 +1,4 @@
-﻿@using _30_4_25_task.Models
+﻿@model _30_4_25_task.ViewModels.IndexVM
 <body>
     <!--[if lte IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -136,7 +136,7 @@
         <div class="container">
             <div class="service-content">
                 <div class="row">
-                    @foreach (var service in ViewData["Services"] as List<Service> ?? [])
+                    @foreach (var service in Model.Services)
                     {
                         <div class="col-md-4 col-sm-6">
 
@@ -166,7 +166,7 @@
             </div><!--/.section-header-->
             <div class="new-cars-content">
                 <div class="owl-carousel owl-theme" id="new-cars-carousel">
-                    @foreach (var newCar in ViewData["NewCars"] as List<NewCar> ?? [])
+                    @foreach (var newCar in Model.NewCars)
                     {
                         <div class="new-cars-item">
                             <div class="single-new-cars-item">
@@ -213,7 +213,7 @@
             <div class="featured-cars-content">
                 @{
                     int i = 0;
-                    foreach (var featuredCars in ViewData["FeaturedCars"] as List<FeaturedCar> ?? [])
+                    foreach (var featuredCars in Model.FeaturedCars)
                     {
                         if (i == 0)
                         {
@@ -264,7 +264,7 @@
             </div><!--/.section-header-->
             <div class="row">
                 <div class="owl-carousel testimonial-carousel">
-                    @foreach (var clientReview in ViewData["ClientReviews"] as List<ClientReview> ?? [])
+                    @foreach (var clientReview in Model.ClientReviews)
                     {
                         <div class="col-sm-3 col-xs-12">
                         <div class="single-testimonial-box">
@@ -298,7 +298,7 @@
         <div class="container">
             <div class="brand-area">
                 <div class="owl-carousel owl-theme brand-item">
-                    @foreach (var brand in ViewData["Brands"] as List<Brand> ?? [])
+                    @foreach (var brand in Model.Brands)
                     {
                         <div class="item">
                             <a href="#">
